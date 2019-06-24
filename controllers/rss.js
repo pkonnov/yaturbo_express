@@ -28,6 +28,20 @@ function mapsData(){
 	}));
 }
 
+function mapsDataTwo(){
+	return get(cfg.url)
+		.then(data => data.map(i => {
+			return `
+<item>
+  <title>${i.title}</title>
+  <link>https://sarinform.ru/news/2019/06/24/212616</link>
+  <description/>
+  <pubDate>${i.pub_date}</pubDate>
+</item>
+`
+		}));
+}
+
 module.exports.rss = async function(req, res){
 
   res.send(`<?xml version="1.0" encoding="utf-8"?>
@@ -57,3 +71,15 @@ module.exports.rss = async function(req, res){
 
 }
 
+module.exports.rssTwo = async function(req, res) {
+	res.send(`<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xml:base=${cfg.linkRss}>
+  <channel>
+    <title>${cfg.title}</title>
+    <link>${cfg.linkRss}</link>
+    <description/>
+    <language>ru</language>
+		${await mapsDataTwo()}
+	</channel>
+</rss>`)	
+}

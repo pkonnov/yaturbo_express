@@ -6,10 +6,7 @@ const app = express();
 const yarss = require('./routes/rss')
 
 
-
-app.get('/', yarss)
-
-
+app.use('/', yarss)
 
 app.listen(3000);
 

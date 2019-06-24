@@ -3,7 +3,8 @@ const controller = require('../controllers/rss')
 const router = express.Router()
 
 
-router.use('', controller.rss)
+router.get('', controller.rss)
+router.get('/rss', controller.rssTwo)
 
 
 module.exports = router
