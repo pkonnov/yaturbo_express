@@ -73,7 +73,7 @@ module.exports.rss = async function(req, res){
 
 module.exports.rssTwo = async function(req, res) {
 	res.send(`<?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xml:base=${cfg.linkRss}>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xml:base="${cfg.linkRss}">
   <channel>
     <title>${cfg.title}</title>
     <link>${cfg.linkRss}</link>
