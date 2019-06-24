@@ -34,7 +34,7 @@ function mapsDataTwo(){
 			return `
 <item>
   <title>${i.title}</title>
-  <link>https://sarinform.ru/news/2019/06/24/212616</link>
+  <link>${i.url_node}</link>
   <description/>
   <pubDate>${i.pub_date}</pubDate>
 </item>
