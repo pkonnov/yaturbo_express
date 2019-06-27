@@ -23,6 +23,7 @@ function mapsData(){
 						</header>
 						${i.body.replace(/&nbsp;/gm, '')}
 				    </turbo:content>
+						<div data-block="share" data-network="facebook, vkontakte, odnoklassniki, telegram"></div>
 				</item>
 				`
 	}));
